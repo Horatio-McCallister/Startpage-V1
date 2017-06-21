@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="Description" lang="en" content="Starpage">
+		<meta name="author" content="McCallister">
+		
+		<!-- Javascript funtions -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://ttv-api.s3.amazonaws.com/twitch.min.js"></script>
+		<script src="js/datetime.js"></script> 
+		<script src="js/search.js"></script>
+		<script src="js/twitch.js"></script>
+		<script src="js/randomImage.js"></script>
+
+		<!-- Override CSS file - add your own CSS rules -->
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="css/datetime.css">
+		<link rel="stylesheet" href="css/searchbar.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:900" rel="stylesheet"> 
+		
+		<!-- Tab Title -->
+		<title>Home Page</title>
+	</head>
+	<body>
+	<body onload="startTime();buildTwitch();displayRandomImage();">
+		<div class="content">
+			<div class="container">
+				<div class="col1">
+					<!-- Clock -->
+					<div id="clockdate">
+					  <div class="clockdate-wrapper">
+						<div id="clock"></div>
+						<div id="date"></div>
+					  </div>
+					</div>
+					<hr>
+					
+					<!-- Search Bar -->
+					<div id="searchForm">
+						<form action="" method="post">
+							<input type="text" name="s" value="" placeholder="Search" />
+							<select name="engines">
+								<option value="google">Google</option>
+								<option value="youtube">YouTube</option>
+								<option value="tpb">TPB</option>
+								<option value="bakabt">BakaBT</option>
+								<option value="nyaa">Nyaa</option>
+								<option value="wa">Wolfram Alpha</option>
+								<option value="wiki">Wikipedia</option>
+								<option value="imdb">IMDB</option>
+							</select>
+						</form>
+					</div>
+					<!-- Mascot Image -->
+					<img id="mascotImage" src="" alt="mascot" style="max-height:100%; max-width:100%;"></img>
+					
+				</div>
+				<!-- Column Links -->
+				<!-- Can fit 7 links max before you'd have to make the spacing smaller -->
+				<div class="col2">
+					<img src="media/template-icon.png" alt="Blank" style="width:128px;height:128px;">
+					<ul id="boards" style="list-style-type: none">
+						<li><a href=URL_GOES_HERE style="font-size: 2.25em;">Link 1</a></li>
+						<li><a href=URL_GOES_HERE style="font-size: 2.25em;">Link 2</a></li>
+						<li><a href=URL_GOES_HERE style="font-size: 2.25em;">Link 3</a></li>
+						<li><a href=URL_GOES_HERE style="font-size: 2.25em;">Link 4</a></li>
+						<li><a href=URL_GOES_HERE style="font-size: 2.25em;">Link 5</a></li>
+						<li><a href=URL_GOES_HERE style="font-size: 2.25em;">Link 6</a></li>
+						<li><a href=URL_GOES_HERE style="font-size: 2.25em;">Link 7</a></li>
+					</ul>
+				</div>
+				<div class="col3">
+					<img src="media/money-icon.png" alt="Obtain" style="width:128px;height:128px;">
+					<ul id="obtain" style="list-style-type: none">
+						<li><a href=URL_GOES_HERE style="font-size: 2.25em;">Link 1</a></li>
+						<li><a href=URL_GOES_HERE style="font-size: 2.25em;">Link 2</a></li>
+						<li><a href=URL_GOES_HERE style="font-size: 2.25em;">Link 3</a></li>
+						<li><a href=URL_GOES_HERE style="font-size: 2.25em;">Link 4</a></li>
+						<li><a href=URL_GOES_HERE style="font-size: 2.25em;">Link 5</a></li>
+						<li><a href=URL_GOES_HERE style="font-size: 2.25em;">Link 6</a></li>
+					</ul>
+				</div>
+				<div class="col4">
+					<img src="media/social-icon.png" alt="Social" style="width:128px;height:128px;">
+					<ul id="social" style="list-style-type: none">
+						<li><a href=URL_GOES_HERE style="font-size: 2.25em;">Link 1</a></li>
+						<li><a href=URL_GOES_HERE style="font-size: 2.25em;">Link 2</a></li>
+						<li><a href=URL_GOES_HERE style="font-size: 2.25em;">Link 3</a></li>
+						<li><a href=URL_GOES_HERE style="font-size: 2.25em;">Link 4</a></li>
+						<li><a href=URL_GOES_HERE style="font-size: 2.25em;">Link 5</a></li>
+					</ul>
+				</div>
+				<div class="col5">
+					<img src="media/bookmark-icon.png" alt="Bookmark" style="width:128px;height:128px;">
+					<ul id="misc" style="list-style-type: none">
+						<li><a href=URL_GOES_HERE style="font-size: 2.25em;">Link 1</a></li>
+						<li><a href=URL_GOES_HERE style="font-size: 2.25em;">Link 2</a></li>
+					</ul>
+				</div>
+				<!-- Twitch Column -->
+				<!-- Replace twitchDashboard link to your own account -->
+				<div class="col6">
+				<img src="media/twitch-icon.png" alt="Twitch" style="width:128px;height:128px;">
+				<p><a id="twitchDashboard" href="https://www.twitch.tv/USERNAME_HERE/dashboard" class="btn">Dashboard</a></p>
+				<img src="media/online-bar.png" alt="online" style="margin-top: 10%">
+					<ul id="twitchOnlineCheck" style="list-style-image: url(media/online-icon.png);"> 
+					</ul>
+				<img src="media/offline-bar.png" alt="offline" style="margin-top: 50%">
+					<ul id="twitchOfflineCheck" style="list-style-image: url(media/offline-icon.png);">
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="container">
+				
+			</div>
+		</div>
+	</body>
+</html>
