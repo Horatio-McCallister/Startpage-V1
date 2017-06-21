@@ -1,0 +1,24 @@
+#searchForm 
+{
+	background-color: #4e4e4e;
+	padding: 5px;
+	margin-bottom: 5px; 
+}
+ 
+ #searchForm input, #searchForm select 
+{
+	background-color: #666666;
+	border: 0;
+	width: 75%;
+	padding: 5px 10px; 
+}
+
+#searchForm select 
+{
+width: 20%;
+	margin-left: 1px;
+	color: #ffff;
+	font-size: 0.75em;
+	height: 28px;
+	float: right; 
+}
