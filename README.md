@@ -16,3 +16,6 @@ The Twtich column will keep track of who is online and offline. This feature req
 While in twitch.js you can change "streamX" to who you want to follow. Add or remove as many as you want. 
 
 Finally the page will randomly pick a mascot to display on screen. You can change and add more of them to the /media/mascot/ folder. Then make changes to randomimage.js if you add more then three mascots. 
+
+## Screenshot
+![Alt text](https://static1.squarespace.com/static/5776c55a893fc0ec8e39c814/t/594b1533f5e231ce2f5bb15c/1498092869195/Startpage "Startpage")
