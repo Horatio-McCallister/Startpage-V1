@@ -11,15 +11,6 @@ function search(query, engine)
 		case 'youtube':
 			var url = 'https://www.youtube.com/results?search_query=' + query;
 		break;
-		case 'tpb':
-			var url = 'https://thepiratebay.org/search/' + query + '/0/99/0';
-		break;
-		case 'bakabt':
-			var url = 'http://bakabt.me/browse.php?q=' + query;
-		break;
-		case 'nyaa':
-			var url = 'https://nyaa.si/?f=0&c=0_0&q=' + query;
-		break;
 		case 'wa':
 			var url = 'http://www.wolframalpha.com/input/?i=' + query;
 		break;
